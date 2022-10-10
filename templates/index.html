@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+    <h1>CONVERT WORDS INTO ELEMENTS</h1>
+{% endblock %}
+{% block body %}
+    <div class="content">
+        <div class="form"> 
+            <form action="/" method="POST">
+                <input type="text" name="word" placeholder="Enter a word" autocomplete="off">
+                <input type="submit" value="Submit">
+            </form> 
+        </div>
+        <h1>WORD</h1>
+        <p>{{ words.name }} </p>
+        <h1>ELEMENTS</h1>
+        {% for element in elements %}
+            <p>
+            {% for e in element %}
+                {{ e }}
+            {% endfor %}
+            </p>
+        {% endfor %}
+    </div>
+{% endblock %} 
